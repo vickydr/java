@@ -1,0 +1,77 @@
+#include<stdio.h>
+void main()
+{
+	int mm,nn;
+	scanf("%d%d",&mm,&nn);
+	int m[100][100];
+	int i=0,j=0,k,a=0;
+	int t=1;
+	int m_=mm;
+	int n_=nn;
+	while(k<m_)
+	{
+		for(i=a;i<m_;i++)
+		{
+			if(m[i][j]>0)
+			{
+				break;
+			}
+			else
+			{
+			scanf("%d",&m[i][j]);
+		}
+		}
+		
+		for(j=a+1;j<n_;j++)
+		{
+			if(m[i-1][j]>0)
+			{
+				break;
+			}
+			else
+			{
+			scanf("%d",&m[i-1][j]);
+		}
+		}
+	
+		for(i=i-2;i>=a;i--)
+		{
+			if(m[i][j-1]>0)
+			{
+				break;
+			}
+			else
+			{
+		scanf("%d",&m[i][j-1]);
+		}
+		}
+		i=0;
+		i=i+a;
+		for(j=j-2;j>=a+1;j--)
+		{
+			if(m[i][j]>0)
+			{
+				break;
+			}
+			else
+			{
+		scanf("%d",&m[i][j]);
+		}
+		}
+		n_=n_-1;
+		m_=m_-1;
+		a=a+1;
+		i=a;
+		j=a;
+		k++;
+	}
+	for(i=0;i<mm;i++)
+	{
+		for(j=0;j<nn;j++)
+		{
+			printf("%d ",m[i][j]);
+		}
+		printf("\n");
+	}
+	
+}
